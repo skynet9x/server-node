@@ -6,7 +6,7 @@ app.get('/', function (req, res) {
   res.send('Hello World')
 });
 
-app.get('api', function (req, res) {
+app.get('/api', function (req, res) {
 
 	res.setHeader('Content-Type', 'application/json');
 
