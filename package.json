@@ -1,0 +1,23 @@
+{
+  "name": "server-node",
+  "version": "1.0.0",
+  "description": "a [Sails](http://sailsjs.org) application",
+  "main": "app.js",
+  "dependencies": {
+    "express": "^4.16.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/skynet9x/server-node.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/skynet9x/server-node/issues"
+  },
+  "homepage": "https://github.com/skynet9x/server-node#readme"
+}
