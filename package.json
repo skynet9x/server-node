@@ -2,7 +2,7 @@
   "name": "webapp",
   "version": "1.0.0",
   "description": "",
-  "main": "app.js",
+  "main": "index.js",
   "dependencies": {
     "@geofreak/json-storage": "^4.0.1",
     "@google-cloud/text-to-speech": "^3.1.0",
@@ -21,7 +21,7 @@
   "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node app.js"
+    "start": "node index.js"
   },
   "author": "binhnguyen",
   "license": "ISC"
