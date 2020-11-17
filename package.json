@@ -1,24 +1,28 @@
 {
-  "name": "server-node",
+  "name": "webapp",
   "version": "1.0.0",
-  "description": "a [Sails](http://sailsjs.org) application",
+  "description": "",
   "main": "app.js",
   "dependencies": {
-    "express": "^4.16.2"
+    "@geofreak/json-storage": "^4.0.1",
+    "@google-cloud/text-to-speech": "^3.1.0",
+    "check-disk-space": "^2.1.0",
+    "ejs": "^3.1.5",
+    "express": "^4.17.1",
+    "express-fileupload": "^1.2.0",
+    "fetch": "^1.1.0",
+    "moment": "^2.28.0",
+    "moment-timezone": "^0.5.31",
+    "os-utils": "0.0.14",
+    "request": "^2.88.2",
+    "socket.io": "^2.3.0",
+    "text-to-speech-js": "^1.1.10"
   },
   "devDependencies": {},
   "scripts": {
-    "start": "node app.js",
-    "stop": "pkill --signal SIGINT server-node"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/skynet9x/server-node.git"
-  },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/skynet9x/server-node/issues"
-  },
-  "homepage": "https://github.com/skynet9x/server-node#readme"
+  "author": "binhnguyen",
+  "license": "ISC"
 }

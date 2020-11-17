@@ -1,0 +1,62 @@
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="/socket.io-client/dist/socket.io.js"></script>
+<script type="text/javascript">
+	function formatMoney(number, m = 0) {
+	    return parseInt(number).toFixed(m).replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,');
+	};
+
+	const cpu_elm = $(".cpu_use");
+	const upCpuElm = function (number)
+	{
+		cpu_elm.text(formatMoney(number, 2) + "%");
+	};
+
+	const socket = io.connect("http://" + document.URL.split("/")[2].replace(":3000", "").replace(":3443", "").replace("https:", "").replace("http:", "") + ':3001');
+	socket.on("os_server", function (data) {
+		upCpuElm(data.cpu);
+		$(".ram_use").text(formatMoney(data.ram_use / data.ram_total * 100, 2) + "%");
+		$(".disk_use").text(formatMoney(data.disk_use / data.disk_total * 100, 2) + "%");
+	});
+
+	socket.on("create_playlist", function (data) {
+		$("[data-tr-channel=\""+ data.channel +"\"] .count_down").attr("date-create", data.date_create);
+
+		$("[data-tr-channel=\""+ data.channel +"\"] .count_playlist").text(data.count_playlist);
+
+		$("[data-tr-channel=\""+ data.channel +"\"] .channel-status").text(data.status);
+		if (data.status=="live")
+			$("[data-tr-channel=\""+ data.channel +"\"] .channel-status").css({ color: "#34de34" });
+		if (data.status=="die")
+			$("[data-tr-channel=\""+ data.channel +"\"] .channel-status").css({ color: "red" });
+		if (data.status=="warning")
+			$("[data-tr-channel=\""+ data.channel +"\"] .channel-status").css({ color: "#ffb610" });
+	});
+
+	socket.on("log_message", function (data) {
+		switch (data.type)
+		{
+			case "Channel":
+					$("#log_channel tbody").prepend(`
+						<tr>
+							<td>`+ data.data.date +`</td>
+							<td>`+ data.type +`</td>
+							<td style="color: #3ad7f1;">`+ data.data.msg +`</td>
+						</tr>
+					`);
+				break;
+			case "playlist":
+					$("#log_playlist tbody").prepend(`
+						<tr>
+							<td>`+ data.data.date +`</td>
+							<td>`+ data.type +`</td>
+							<td style="color: #3ad7f1;">`+ data.data.msg +`</td>
+						</tr>
+					`);
+				break;
+		};
+	});
+</script>

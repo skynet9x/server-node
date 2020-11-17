@@ -1,0 +1,150 @@
+body { font-size: 9px; }
+
+::-webkit-scrollbar {
+  width: 1em;
+}
+ 
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+ 
+::-webkit-scrollbar-thumb {
+  background-color: darkgrey;
+  outline: 1px solid slategrey;
+}
+
+#root { background-color: #202035; height: 100vh; padding-top: 10px; overflow-y: auto; color: #fff;}
+.alert-custom { padding: 2px 3px; border-radius: 0; margin: 0; }
+.media:first-child {
+    margin-top: 11px;
+}
+.media
+{ background-color: #272c42; position: relative; }
+
+.media .media-action
+{
+	position: absolute; top: 0px; right: 3px;
+}
+
+.media .media-action .btn
+{
+	border-top-left-radius: 0;
+	border-top-right-radius: 0;
+}
+
+.table-striped>tbody>tr:nth-of-type(odd) {
+    background-color: #202035;
+}
+
+.table-striped
+{
+	font-size: 11px;
+}
+
+.nav-tabs>li.active>a, .nav-tabs>li.active>a:focus, .nav-tabs>li.active>a:hover {
+    color: #fff;
+    cursor: default;
+    background-color: #1b1b30;
+    border: 1px solid #ddd;
+    border-bottom-color: transparent;
+}
+.nav-action
+{
+	width: 60px;
+    background-color: #1B1B30;
+    border-radius: 10px;
+    position: fixed;
+    top: 20px;
+    right: 5px;
+}
+.nav-action .btn { margin: 10px 10px; }
+.form-control {
+    color: #fff;
+    background-color: #202036;
+}
+
+.modal-content {
+    position: relative;
+    background-color: #11111d;
+    color: #FFF;
+    background-clip: padding-box;
+    border: 1px solid #999;
+    border: 1px solid rgba(0,0,0,.2);
+    border-radius: 6px;
+    -webkit-box-shadow: 0 3px 9px rgba(0,0,0,.5);
+    box-shadow: 0 3px 9px rgba(0,0,0,.5);
+    outline: 0;
+}
+.close { color: #fff; }
+.media-body:hover { cursor: pointer;  }
+
+#table_channel_data thead {
+    position: fixed;
+    width: 836px;
+    display: block;
+    z-index: 9;
+    top: 108px;
+    background-color: #202035;
+}
+
+#table_channel_data tbody {
+    position: absolute;
+    top: 125px;
+}
+/*.table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .table>thead>tr>td, .table>thead>tr>th
+{
+    padding: 0px;
+}*/
+
+.modal.left .modal-dialog,
+.modal.right .modal-dialog {
+	position: fixed;
+	margin: auto;
+	width: 320px;
+	height: 100%;
+	-webkit-transform: translate3d(0%, 0, 0);
+	    -ms-transform: translate3d(0%, 0, 0);
+	     -o-transform: translate3d(0%, 0, 0);
+	        transform: translate3d(0%, 0, 0);
+}
+
+.modal.left .modal-content,
+.modal.right .modal-content {
+	height: 100%;
+	overflow-y: auto;
+}
+
+.modal.left .modal-body,
+.modal.right .modal-body {
+	padding: 15px 15px 80px;
+}
+
+/* Left */
+.modal.left.fade .modal-dialog{
+	left: -320px;
+	-webkit-transition: opacity 0.3s linear, left 0.3s ease-out;
+	   -moz-transition: opacity 0.3s linear, left 0.3s ease-out;
+	     -o-transition: opacity 0.3s linear, left 0.3s ease-out;
+	        transition: opacity 0.3s linear, left 0.3s ease-out;
+}
+
+.modal.left.fade.in .modal-dialog{
+	left: 0;
+}
+        
+/* Right */
+.modal.right.fade .modal-dialog {
+	right: -320px;
+	-webkit-transition: opacity 0.3s linear, right 0.3s ease-out;
+	   -moz-transition: opacity 0.3s linear, right 0.3s ease-out;
+	     -o-transition: opacity 0.3s linear, right 0.3s ease-out;
+	        transition: opacity 0.3s linear, right 0.3s ease-out;
+}
+
+.modal.right.fade.in .modal-dialog {
+	right: 0;
+}
+.checkbox, .radio
+{
+    margin: 0;
+}
